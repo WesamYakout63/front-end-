@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+  </head>
+  <body>
+    <section class="overlay">
+	  <h1>Sign Up</h1>
+      <p>Create an account:</p>
+      <form action="submission.html" method="GET">
+		<label for="username" class="floatLabel">Username:</label>
+        <br>
+				<input pattern="[a-zA-Z0-9]+" id="username" name="username" type="text" required minlength="3" maxlength="15">
+        <br>
+        <label for="pw">Password:</label>
+        <br>
+				<input id="pw" name="pw" type="password" required minlength="8" maxlength="15" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+        <br>
+		<label for="email">Email:</label>
+        <br>
+				<input id="email" name="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <br>
+		<label for="Phone">Phone Number:</label>
+        <br>
+				<input id="phone" name="phone" type="tel" required length="11">
+        <br>
+		<label for="address">Adderess:</label>
+        <br>
+				<input id="address" name="address" type="text" required>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+  </body>
+</html>
