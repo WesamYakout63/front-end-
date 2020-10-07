@@ -2,36 +2,84 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Sign Up Page</title>
-    <link rel="stylesheet" href="./styles.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <section class="overlay">
-	  <h1>Sign Up</h1>
-      <p>Create an account:</p>
-      <form action="submission.html" method="GET">
-		<label for="username" class="floatLabel">Username:</label>
-        <br>
-				<input pattern="[a-zA-Z0-9]+" id="username" name="username" type="text" required minlength="3" maxlength="15">
-        <br>
-        <label for="pw">Password:</label>
-        <br>
-				<input id="pw" name="pw" type="password" required minlength="8" maxlength="15" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-        <br>
-		<label for="email">Email:</label>
-        <br>
-				<input id="email" name="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-        <br>
-		<label for="Phone">Phone Number:</label>
-        <br>
-				<input id="phone" name="phone" type="tel" required length="11">
-        <br>
-		<label for="address">Adderess:</label>
-        <br>
-				<input id="address" name="address" type="text" required>
-        <br>
-        <input type="submit" value="Submit">
+    <div class="jumbotron jumbotron-fluid bg-dark text-white">
+      <h1 class="text-center" id="header">Sign Up</h1>
+      <h2 class="text-center" id="createAccount">Create an account:</h2>
+    </div>
+    <div class="container col-sm-6" id="container">
+      <form class="col-sm-12 was-validated" action="submission.html" method="GET">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Please fill in these requirements</h4>
+            <div class="form-group">
+              <div class="row">
+                <label for="username" class="col-sm-3 control-label">Username*</label>
+                <input id="username" name="username" type="text" required minlength="3" maxlength="15" placeholder="User full name" class="form-control col-sm-9" autofocus>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter a name of length between 3 and 15</div>
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="pw" class="col-sm-3 control-label">Password*</label>
+                <input id="pw" name="pw" type="password" required minlength="8" maxlength="15" placeholder="Password" class="form-control col-sm-9" autofocus
+                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter a password having at least a number & a capital letter</div>
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="pw" class="col-sm-3 control-label">Confirm Password*</label>
+                <input id="pw" name="pw" type="password" required minlength="8" maxlength="15" placeholder="Confirm Password" class="form-control col-sm-9" autofocus>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">password doesn`t match</div>
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="email" class="col-sm-3 control-label">Email*</label>
+                <input id="email" name="email" type="email" placeholder="Email Address" class="form-control col-sm-9" autofocus 
+                pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">The email address you entered is invalid</div>
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="Phone" class="col-sm-3 control-label">Phone Number*</label>
+                <input id="phone" name="phone" type="phoneNumber" required length="11" placeholder="Phone Number" class="form-control col-sm-9" autofocus>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">The phone number you entered is invalid</div>
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="address" class="col-sm-3 control-label">Adderess*</label>
+                <input id="address" name="address" type="text" required placeholder="Address" class="form-control col-sm-9" autofocus>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">The address you entered is invalid</div>
+              </div>
+              <br>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck" name="conditions" required>
+                <label class="custom-control-label" for="customCheck">I accept the terms and condition</label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">You must agree on the terms and conditions</div>
+              </div>
+              <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              </div>
+            </div>
+          </div>
       </form>
-    </section>
+    </div>
   </body>
 </html>
